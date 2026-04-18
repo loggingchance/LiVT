@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="96" fill="#0a1f0e"/>
+<path d="M0 320 Q60 260 140 290 Q200 260 260 275 Q320 245 380 270 Q420 255 460 265 Q490 260 512 268 L512 380Z" fill="#1a3820"/>
+<path d="M0 350 Q80 310 160 330 Q230 305 300 320 Q370 300 430 315 Q470 308 512 315 L512 400Z" fill="#163a22"/>
+<g fill="#0d2614">
+<path d="M0 400 L20 340 L30 370 L40 335 L50 375 L60 330 L70 380 L85 400Z"/>
+<path d="M80 400 L100 350 L110 375 L120 345 L130 378 L140 340 L150 380 L165 400Z"/>
+<path d="M160 398 L175 355 L183 378 L191 350 L200 380 L208 348 L218 382 L230 398Z"/>
+<path d="M280 400 L295 345 L305 375 L315 340 L325 378 L335 338 L345 380 L360 400Z"/>
+<path d="M355 398 L368 360 L376 382 L384 355 L394 385 L402 352 L412 386 L425 398Z"/>
+<path d="M420 400 L435 350 L445 378 L455 345 L465 380 L475 342 L485 382 L500 400Z"/>
+</g>
+<rect y="398" width="512" height="114" fill="#0a1f0e"/>
+<rect y="490" width="512" height="22" fill="#d4c9a8" rx="0"/>
+<text x="256" y="275" text-anchor="middle" font-family="Georgia,serif" font-size="160" font-weight="700" fill="#d4c9a8" letter-spacing="8">LiVT</text>
+<text x="256" y="455" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="400" fill="#5a7a5a" letter-spacing="6">LOG IN VERMONT</text>
+</svg>
