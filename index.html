@@ -47,7 +47,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;heigh
 .field .sub{font-size:12px;color:#5a7a5a;margin-bottom:6px;line-height:1.4}
 .input-row{position:relative}
 .input-row .pfx{position:absolute;left:10px;top:10px;font-size:14px;color:#5a7a5a;font-family:'DM Mono',monospace;pointer-events:none}
-input[type=text],input[type=number],.tinput{width:100%;padding:9px 12px;font-size:15px;font-family:'DM Mono',monospace;background:#0a1a0e;border:1px solid #1a3820;border-radius:6px;color:#d4c9a8;outline:none;transition:border-color .2s}
+input[type=text],input[type=number],.tinput{width:100%;padding:9px 12px;font-size:15px;font-family:'DM Mono',monospace;background:#ffffff;border:1px solid #1a3820;border-radius:6px;color:#1a2e1a;outline:none;transition:border-color .2s}
 input:focus,.tinput:focus{border-color:#2a5a3a}
 .has-pfx{padding-left:28px!important}
 .total-bar{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;margin-top:20px;background:#122e18;border-radius:8px;border:1px solid #1a3820;font-size:16px;font-weight:600;color:#d4c9a8}
@@ -62,7 +62,7 @@ input:focus,.tinput:focus{border-color:#2a5a3a}
 .breakdown .tot{display:flex;justify-content:space-between;font-size:15px;font-weight:600;color:#d4c9a8;font-family:'DM Mono',monospace;padding:10px 0 0;margin-top:8px;border-top:1px solid #2a4a3a}
 .prod-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #0d2614}
 .prod-num{font-family:'DM Mono',monospace;font-size:12px;color:#3a5a3a;width:20px;text-align:center}
-.prod-input{width:100%;padding:8px 10px;font-size:14px;font-family:'DM Sans',sans-serif;background:#0a1a0e;border:1px solid #1a3820;border-radius:6px;color:#d4c9a8;outline:none}
+.prod-input{width:100%;padding:8px 10px;font-size:14px;font-family:'DM Sans',sans-serif;background:#ffffff;border:1px solid #1a3820;border-radius:6px;color:#1a2e1a;outline:none}
 .load-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #0d2614}
 .load-name{font-size:14px;color:#c8d4be;font-weight:500}
 .load-rate{font-size:12px;color:#5a7a5a;font-family:'DM Mono',monospace}
@@ -92,6 +92,8 @@ input:focus,.tinput:focus{border-color:#2a5a3a}
 .reset-btn{padding:8px 16px;font-size:12px;font-family:'DM Sans',sans-serif;background:0 0;border:none;color:#3a5a3a;cursor:pointer;margin-bottom:8px}
 .print-btn{width:100%;padding:14px;margin-top:16px;font-size:14px;font-family:'DM Sans',sans-serif;font-weight:600;background:0 0;border:1px solid #2a4a3a;border-radius:8px;color:#8faa7e;cursor:pointer;letter-spacing:1px}
 .save-note{font-size:11px;color:#3a5a3a;margin-bottom:12px}
+.manual-btn{display:inline-block;padding:10px 20px;font-size:13px;font-family:'DM Sans',sans-serif;font-weight:500;background:0 0;border:1px solid #2a4a3a;border-radius:8px;color:#8faa7e;cursor:pointer;text-decoration:none;letter-spacing:1px;margin-bottom:16px;transition:all 0.2s}
+.manual-btn:hover{color:#d4c9a8;border-color:#8faa7e}
 .credit{font-size:10px;letter-spacing:2px;color:#3a5a3a;text-transform:uppercase;margin-bottom:4px}
 .credit-sub{font-size:10px;color:#2a4a2a;letter-spacing:1px}
 .step-panel{display:none}
@@ -290,6 +292,7 @@ function render(){
   if(state.step<3)fn+=`<button class="next-btn" onclick="goStep(${state.step+1})">Next &rarr;</button>`;
   fn+=`</div><button class="reset-btn" onclick="resetAll()">Reset All</button>`+
     `<div class="save-note">&check; Data saved to this device</div>`+
+    `<a href="https://manual.loginvt.com" target="_blank" class="manual-btn">&#9702; User Manual</a>`+
     `<div class="credit">A Vermont Forest Business School Tool</div><div class="credit-sub">Northeast Forests LLC</div>`;
   footer.innerHTML=fn;
   save();
