@@ -168,11 +168,11 @@ function getWeeklyCalc(){
 function numField(label,sub,value,onchange,opts={}){
   const pfx=opts.prefix!==undefined?opts.prefix:"$";
   return`<div class="field"><label>${label}</label>${sub?`<div class="sub">${sub}</div>`:""}<div class="input-row">${pfx?`<span class="pfx">${pfx}</span>`:""}` +
-    `<input type="number" value="${value||""}" oninput="${onchange}" class="${pfx?"has-pfx":""}" step="${opts.step||1}" min="${opts.min||0}" placeholder="0"></div></div>`;
+    `<input type="number" value="${value||""}" onchange="${onchange}" class="${pfx?"has-pfx":""}" step="${opts.step||1}" min="${opts.min||0}" placeholder="0"></div></div>`;
 }
 
 function textField(label,value,onchange,ph=""){
-  return`<div class="field"><label>${label}</label><input type="text" value="${value}" oninput="${onchange}" placeholder="${ph}" style="font-family:'DM Sans',sans-serif"></div>`;
+  return`<div class="field"><label>${label}</label><input type="text" value="${value}" onchange="${onchange}" placeholder="${ph}" style="font-family:'DM Sans',sans-serif"></div>`;
 }
 
 function renderNav(){
@@ -224,7 +224,7 @@ function renderProducts(){
   const d=state.products;
   const count=d.filter(p=>p.name.trim()).length;
   return`<div class="step-intro">List the products you produce and the average net proceeds from a load of each (gross revenue, less stumpage and trucking).</div>`+
-    d.map((p,i)=>`<div class="prod-row"><div class="prod-num">${i+1}</div><div style="flex:1"><input class="prod-input" type="text" value="${p.name}" oninput="updateProd(${i},'name',this.value)" placeholder="${i===0?"e.g. Hardwood sawlogs":"Product name"}"></div><div style="width:110px"><div class="input-row"><span class="pfx" style="top:7px">$</span><input class="prod-input has-pfx" type="number" value="${p.netPerLoad||""}" oninput="updateProd(${i},'netPerLoad',this.value)" placeholder="0" step="1" style="text-align:right;font-family:'DM Mono',monospace"></div></div></div>`).join("")+
+    d.map((p,i)=>`<div class="prod-row"><div class="prod-num">${i+1}</div><div style="flex:1"><input class="prod-input" type="text" value="${p.name}" onchange="updateProd(${i},'name',this.value)" placeholder="${i===0?"e.g. Hardwood sawlogs":"Product name"}"></div><div style="width:110px"><div class="input-row"><span class="pfx" style="top:7px">$</span><input class="prod-input has-pfx" type="number" value="${p.netPerLoad||""}" onchange="updateProd(${i},'netPerLoad',this.value)" placeholder="0" step="1" style="text-align:right;font-family:'DM Mono',monospace"></div></div></div>`).join("")+
     `<div class="prod-count">${count} product${count!==1?"s":""} entered</div>`;
 }
 
@@ -258,7 +258,7 @@ function renderResults(){
   if(!active.length) h+=`<div class="sub" style="text-align:center;padding:20px">No products entered. Go back to the Products step.</div>`;
   active.forEach(p=>{
     h+=`<div class="load-row"><div style="flex:1"><div class="load-name">${p.name}</div><div class="load-rate">${fmt(p.netPerLoad)}/load</div></div>`+
-      `<div style="width:90px"><input type="number" value="${d.loads[p.i]||""}" oninput="updateLoad(${p.i},this.value)" placeholder="0" min="0" style="text-align:center"></div>`+
+      `<div style="width:90px"><input type="number" value="${d.loads[p.i]||""}" onchange="updateLoad(${p.i},this.value)" placeholder="0" min="0" style="text-align:center"></div>`+
       `<div class="load-total">${fmt(d.loads[p.i]*p.netPerLoad)}</div></div>`;
   });
   h+=`<div class="section-label">Adjustments</div>`+
